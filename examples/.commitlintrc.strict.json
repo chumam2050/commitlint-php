@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "type": {
+      "required": true,
+      "allowed": ["feat", "fix", "docs", "test", "refactor", "chore"]
+    },
+    "scope": {
+      "required": true,
+      "allowed": ["auth", "api", "ui", "db", "config", "test", "docs"]
+    },
+    "subject": {
+      "min_length": 10,
+      "max_length": 50,
+      "case": "lower",
+      "end_with_period": false
+    },
+    "body": {
+      "max_line_length": 72,
+      "leading_blank": true
+    },
+    "footer": {
+      "leading_blank": true
+    }
+  },
+  "hooks": {
+    "commit-msg": true,
+    "pre-commit": false,
+    "pre-push": false
+  }
+}

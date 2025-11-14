@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+// Find autoloader
+$autoloadPaths = [
+    __DIR__ . '/../../../autoload.php', // Installed as dependency
+    __DIR__ . '/../vendor/autoload.php', // Development
+];
+
+$autoloadFound = false;
+foreach ($autoloadPaths as $path) {
+    if (file_exists($path)) {
+        require_once $path;
+        $autoloadFound = true;
+        break;
+    }
+}
+
+if (!$autoloadFound) {
+    fwrite(STDERR, "Error: Composer autoloader not found.\n");
+    fwrite(STDERR, "Please run 'composer install' first.\n");
+    exit(1);
+}
+
+use Choerulumam\CommitlintPhp\Application;
+
+try {
+    $application = new Application();
+    exit($application->run());
+} catch (\Exception $e) {
+    fwrite(STDERR, "Error: " . $e->getMessage() . "\n");
+    exit(1);
+}

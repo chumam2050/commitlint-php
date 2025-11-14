@@ -1,0 +1,42 @@
+{
+  "rules": {
+    "type": {
+      "required": true,
+      "allowed": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "ci",
+        "build",
+        "revert"
+      ]
+    },
+    "scope": {
+      "required": false,
+      "allowed": []
+    },
+    "subject": {
+      "min_length": 1,
+      "max_length": 100,
+      "case": "any",
+      "end_with_period": false
+    },
+    "body": {
+      "max_line_length": 100,
+      "leading_blank": true
+    },
+    "footer": {
+      "leading_blank": true
+    }
+  },
+  "hooks": {
+    "commit-msg": true,
+    "pre-commit": false,
+    "pre-push": false
+  }
+}

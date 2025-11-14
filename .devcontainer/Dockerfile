@@ -16,8 +16,9 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Install Xdebug (compatible dengan PHP 7.3+)
-RUN pecl install xdebug \
+# Install Xdebug (version-specific untuk PHP 7.3+)
+# Xdebug 2.9.8 untuk PHP 7.x, Xdebug 3.x untuk PHP 8+
+RUN php -v | grep -q "PHP 7" && pecl install xdebug-2.9.8 || pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # Configure Xdebug (mode hanya untuk PHP 8+, untuk PHP 7 gunakan remote_enable)

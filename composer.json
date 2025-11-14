@@ -1,24 +1,29 @@
 {
     "name": "choerulumam/commitlint-php",
-    "description": "Commitlint For PHP",
+    "description": "A powerful Git hooks and commit message linting tool for PHP projects - PHP 7.3+ compatible",
     "type": "library",
+    "keywords": ["git", "commit", "commitlint", "conventional-commits", "git-hooks", "validation"],
+    "license": "MIT",
     "require": {
-        "php": ">=7.3"
+        "php": ">=7.3",
+        "symfony/console": "^4.4 || ^5.0 || ^6.0 || ^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5 || ^8.0"
     },
-    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "choerulumam\\CommitlintPhp\\": "src/"
+            "Choerulumam\\CommitlintPhp\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "choerulumam\\CommitlintPhp\\Tests\\": "tests/"
+            "Choerulumam\\CommitlintPhp\\Tests\\": "tests/"
         }
     },
+    "bin": [
+        "bin/commitlint"
+    ],
     "authors": [
         {
             "name": "chumam2050",
@@ -28,5 +33,9 @@
     "scripts": {
         "test": "phpunit",
         "test:coverage": "phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
     }
 }
