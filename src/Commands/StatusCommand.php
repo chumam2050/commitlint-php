@@ -39,7 +39,9 @@ class StatusCommand extends Command
      */
     protected function configure()
     {
-        $this->setDescription('Show status of installed hooks and configuration');
+        $this
+            ->setName('status')
+            ->setDescription('Show status of installed hooks and configuration');
     }
 
     /**

@@ -35,6 +35,7 @@ class UninstallCommand extends Command
     protected function configure()
     {
         $this
+            ->setName('uninstall')
             ->setDescription('Uninstall Git hooks')
             ->addOption(
                 'force',

@@ -44,6 +44,7 @@ class ValidateCommand extends Command
     protected function configure()
     {
         $this
+            ->setName('validate')
             ->setDescription('Validate a commit message')
             ->addArgument(
                 'message',

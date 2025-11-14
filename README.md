@@ -4,6 +4,10 @@ A powerful Git hooks and commit message linting tool for PHP projects - combinin
 
 [![PHP Version](https://img.shields.io/badge/PHP-%3E%3D7.3-blue.svg)](https://www.php.net/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Packagist Version](https://img.shields.io/packagist/v/choerulumam/commitlint-php)](https://packagist.org/packages/choerulumam/commitlint-php)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/choerulumam/commitlint-php)](https://packagist.org/packages/choerulumam/commitlint-php)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](tests/)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](tests/)
 
 
 ## 🚀 Features

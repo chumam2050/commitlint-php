@@ -32,7 +32,13 @@
     ],
     "scripts": {
         "test": "phpunit",
-        "test:coverage": "phpunit --coverage-html coverage"
+        "test:coverage": "phpunit --coverage-html coverage",
+        "post-install-cmd": [
+            "@php bin/commitlint install --quiet || true"
+        ],
+        "post-update-cmd": [
+            "@php bin/commitlint install --quiet || true"
+        ]
     },
     "config": {
         "sort-packages": true,
