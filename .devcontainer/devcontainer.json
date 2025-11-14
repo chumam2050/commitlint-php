@@ -4,6 +4,8 @@
 	"service": "app",
 	"workspaceFolder": "/workspace",
 
+	// Untuk mengubah PHP version, edit PHP_VERSION di docker-compose.yml
+
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -17,7 +19,7 @@
 			"settings": {
 				"terminal.integrated.defaultProfile.linux": "bash",
 				"php.validate.executablePath": "/usr/local/bin/php",
-				"intelephense.environment.phpVersion": "8.1.0"
+				"intelephense.environment.phpVersion": "7.3.0"
 			}
 		}
 	},

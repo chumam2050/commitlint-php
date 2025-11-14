@@ -50,6 +50,29 @@ composer test:coverage
 
 ## Features
 
+### PHP Version Support
+Library ini compatible dengan **PHP 7.3 hingga PHP 8.x**.
+
+DevContainer default menggunakan **PHP 8.1**, tetapi bisa diubah sesuai kebutuhan:
+
+**Cara mengubah PHP version:**
+1. Edit `.devcontainer/docker-compose.yml`
+2. Ubah value `PHP_VERSION` di bagian `build.args`:
+   ```yaml
+   build:
+     args:
+       PHP_VERSION: "7.3"  # Ubah sesuai kebutuhan
+   ```
+3. Rebuild container: `F1` → `Dev Containers: Rebuild Container`
+
+**Versi yang didukung:**
+- PHP 7.3
+- PHP 7.4
+- PHP 8.0
+- PHP 8.1 (default)
+- PHP 8.2
+- PHP 8.3
+
 ### Extensions yang Terinstall
 - **Intelephense**: PHP IntelliSense
 - **PHP Debug**: Xdebug integration
@@ -59,10 +82,17 @@ composer test:coverage
 - **EditorConfig**: Code style consistency
 
 ### Xdebug Configuration
-Xdebug sudah dikonfigurasi dengan:
+Xdebug sudah dikonfigurasi otomatis berdasarkan PHP version:
+
+**PHP 8.x:**
 - Mode: debug, coverage
 - Start with request: yes
 - Client host: host.docker.internal
+
+**PHP 7.x:**
+- Remote enable: 1
+- Remote autostart: 1
+- Remote host: host.docker.internal
 
 ## Customization
 
@@ -76,10 +106,13 @@ RUN docker-php-ext-install pdo pdo_mysql
 Uncomment bagian database di `.devcontainer/docker-compose.yml`
 
 ### Mengubah PHP Version
-Edit `.devcontainer/Dockerfile`:
-```dockerfile
-FROM php:8.2-cli  # Ganti dari 8.1 ke 8.2
+Edit `.devcontainer/docker-compose.yml`:
+```yaml
+build:
+  args:
+    PHP_VERSION: "7.4"  # Ganti sesuai kebutuhan (7.3, 7.4, 8.0, 8.1, 8.2, 8.3)
 ```
+Kemudian rebuild: `F1` → `Dev Containers: Rebuild Container`
 
 ## Troubleshooting
 
