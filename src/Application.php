@@ -55,7 +55,7 @@ class Application extends ConsoleApplication
     /**
      * @return string
      */
-    public function getLongVersion()
+    public function getLongVersion(): string
     {
         return sprintf(
             '<info>%s</info> version <comment>%s</comment>',
