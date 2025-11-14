@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    volumes:
+      - ..:/workspace:cached
+    
+    command: sleep infinity
+    
+    # Uncomment jika perlu networking
+    # network_mode: service:db
+    
+  # Uncomment jika memerlukan database untuk testing
+  # db:
+  #   image: mysql:8.0
+  #   restart: unless-stopped
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: test_db
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+
+# volumes:
+#   mysql-data:

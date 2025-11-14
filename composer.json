@@ -1,0 +1,29 @@
+{
+    "name": "choerulumam/commitlint-php",
+    "description": "Commitlint For PHP",
+    "type": "library",
+    "require": {
+       "phpunit/phpunit": "^9.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "choerulumam\\CommitlintPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "choerulumam\\CommitlintPhp\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "chumam2050",
+            "email": "choerulumam2050@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage"
+    }
+}

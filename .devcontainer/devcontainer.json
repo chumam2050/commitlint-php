@@ -1,0 +1,30 @@
+{
+	"name": "CommitLint PHP Development",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bmewburn.vscode-intelephense-client",
+				"xdebug.php-debug",
+				"MehediDracula.php-namespace-resolver",
+				"recca0120.vscode-phpunit",
+				"eamodio.gitlens",
+				"EditorConfig.EditorConfig"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"php.validate.executablePath": "/usr/local/bin/php",
+				"intelephense.environment.phpVersion": "8.1.0"
+			}
+		}
+	},
+
+	"forwardPorts": [],
+
+	"postCreateCommand": "composer install",
+
+	"remoteUser": "vscode"
+}

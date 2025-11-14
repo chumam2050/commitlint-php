@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "MehediDracula.php-namespace-resolver",
+        "recca0120.vscode-phpunit",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig"
+    ]
+}
