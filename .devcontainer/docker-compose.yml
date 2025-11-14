@@ -8,15 +8,16 @@ services:
       args:
         # Ubah versi PHP sesuai kebutuhan: 7.3, 7.4, 8.0, 8.1, 8.2, 8.3
         PHP_VERSION: "7.3"
-    
+
     volumes:
       - ..:/workspace:cached
-    
+      - ${HOME}/.ssh:/home/vscode/.ssh
+
     command: sleep infinity
-    
+
     # Uncomment jika perlu networking
     # network_mode: service:db
-    
+
   # Uncomment jika memerlukan database untuk testing
   # db:
   #   image: mysql:8.0
